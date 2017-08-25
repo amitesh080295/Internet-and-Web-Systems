@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+<head>
+<Title>Geometric Shapes</Title>
+<link href='http://fonts.googleapis.com/css?family=Merienda+One' rel='stylesheet' type='text/css'>
+<style>
+body {
+	margin: 0px;
+	background-color: #F0F0F1;
+}
+
+nav{
+	background-color: black;
+	height: 55px;
+	padding-left: 360px;
+	padding-top: 0px;
+	align: center;
+}
+
+.myShapes {
+	display: none;
+	float: left;
+	width: 60%;
+	text-align: center;
+	background-color: white;
+	margin-left: 270px;
+	margin-top: -420px;
+	max-width: 60%;
+	border-bottom-style: solid;
+	border-bottom-color: black;
+	border-bottom-width: 5px;
+	margin-bottom: 20px;
+	box-shadow: 2px 2px 10px #ccc;
+	padding-bottom: 40px;
+}
+
+.myArea {
+	
+	float: left;
+	width: 15%;
+	height: 100px;
+	margin-top: 150px;
+	text-align: center;
+	margin-left: 30px;
+	background-color: #F0F0F1;
+	font: 100 25px/1.2 'Merienda One', Helvetica, sans-serif;
+    -ms-transform: rotate(-15deg); 
+    -webkit-transform: rotate(-15deg); 
+    transform: rotate(-15deg);
+}
+
+.myPerimeter {
+	
+	float: left;
+	margin-right: 75px;
+	width: 10%;
+	height: 100px;
+	margin-top: 100px;
+	text-align: center;
+	margin-left: 1140px;
+	background-color: #F0F0F1;
+	font: 100 25px/1.2 'Merienda One', Helvetica, sans-serif;
+    -ms-transform: rotate(15deg); 
+    -webkit-transform: rotate(15deg); 
+    transform: rotate(15deg);
+}
+
+.button {
+	font: 100 16px/1.2 'Merienda One', Helvetica, sans-serif;
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+
+
+.image {
+	margin-bottom: 0px; 
+	height: 50%; 
+	width: 50%;
+}
+
+font {
+	font: 100 16px/1.2 'Merienda One', Helvetica, sans-serif;
+    color: rgba(0,0,0,0.7);
+    text-shadow: 3px 3px 3px #fff;
+}
+
+input[type=number] {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #000000;
+}
+
+</style>
+</head>
+<body>
+
+
+
+
+<nav>
+	    <button class = "button" onclick = "changeShape(0)">Circle</button>
+		<button class = "button" onclick = "changeShape(1)">Triangle</button>
+		<button class = "button" onclick = "changeShape(2)">Square</button>
+		<button class = "button" onclick = "changeShape(3)">Rectangle</button>
+		<button class = "button" onclick = "changeShape(4)">Hexagon</button>	
+</nav>
+
+<div class = "myArea" id = "Area"></div>
+
+<div class = "myPerimeter" id = "Perimeter"></div>
+
+<div class = "myShapes" id = "Circle">
+	<img src = "Circle.jpg" class = "image" >
+	<form >
+		<font>Enter the radius of the circle:</font>
+		<input type = "number" id = "radius" min = "0">
+		<br>
+		<br>
+		<button class = "button" onclick = "circleArea();circlePerimeter(); return false;">Calculate</button>
+	</form>
+</div>
+
+<div class = "myShapes" id = "Triangle">
+	<img src = "Triangle.jpg" class = "image" >
+	<form>
+		<font>Enter first side of the triangle:</font>
+		<input type = "number" id = "side1" min = "0">
+		<br>
+		<br>
+		<font>Enter second side of the triangle:</font>
+		<input type = "number" id = "side2" min = "0">
+		<br>
+		<br>
+		<font>Enter third side of the triangle:</font>
+		<input type = "number" id = "side3" min = "0">
+		<br>
+		<br>
+		<button class = "button" onclick = "triangleArea();trianglePerimeter(); return false;">Calculate</button>
+	</form>
+</div>
+
+<div class = "myShapes" id = "Square">
+	<img src = "Square.jpg" class = "image" >
+	<form>
+		<font>Enter the side of the square:</font>
+		<input type = "number" id = "side" min = "0">
+		<br>
+		<br>
+		<button class = "button" onclick = "squareArea();squarePerimeter(); return false;">Calculate</button>
+	</form>
+</div>
+
+<div class = "myShapes" id = "Rectangle">
+	<img src = "Rectangle.jpg" class = "image" >
+	<form>
+		<font>Enter the length of the rectangle:</font>
+		<input type = "number" id = "length" min = "0">
+		<br>
+		<br>
+		<font>Enter the breadth of the rectangle:</font>
+		<input type = "number" id = "breadth" min = "0">
+		<br>
+		<br>
+		<button class = "button" onclick = "rectangleArea();rectanglePerimeter(); return false;">Calculate</button>
+	</form>
+</div>
+
+<div class = "myShapes" id = "Hexagon">
+	<img src = "Hexagon.jpg" class = "image" >
+	<form>
+		<font>Enter the side of the hexagon:</font>
+		<input type = "number" id = "hexSide" min = "0">
+		<br>
+		<br>
+		<button class = "button" onclick = "hexagonArea();hexagonPerimeter(); return false;">Calculate</button>
+	</form>
+</div>
+
+
+<script type="text/javascript" > 
+ 
+function changeShape(index) {
+   var shapes = document.getElementsByClassName('myShapes');
+   for (var i = 0 ; i < shapes.length ; i++)
+   {
+		if(i === index)
+		{
+			shapes[index].style.display = 'block';
+		}
+		else
+		{
+			shapes[i].style.display = 'none';
+		}
+   }
+   var divArea = document.getElementById('Area');
+   var divPerimeter = document.getElementById('Perimeter');
+   divArea.innerHTML = "";
+   divPerimeter.innerHTML = "";
+}
+
+function circleArea() {
+	var divArea = document.getElementById('Area');
+	var radius = document.getElementById('radius').value;
+	if(+radius < 0)
+	{
+		alert("Can't input negative values");
+	}
+	else
+	{
+	var area = (3.14*radius*radius).toFixed(2);
+	divArea.innerHTML = "";
+	divArea.innerHTML += "Area<br>" + area + " sq. units";
+	}
+}
+
+function circlePerimeter() {
+	var radius = document.getElementById('radius').value;
+	if(+radius < 0)
+	{
+		alert("Can't input negative values");
+	}
+	else
+	{
+	var perimeter = (3.14*radius*2).toFixed(2);
+	var divPerimeter = document.getElementById('Perimeter');
+	divPerimeter.innerHTML = "";
+	divPerimeter.innerHTML += "Circumference<br>" + perimeter + " units";
+	}
+}
+
+function triangleArea() {
+	var side1 = document.getElementById('side1').value;
+	var side2 = document.getElementById('side2').value;
+	var side3 = document.getElementById('side3').value;
+	if(+side1 < 0 || +side2 < 0 || +side3 < 0)
+	{
+		alert("Can't input negative values");
+	}
+	else
+	{
+	var s = (+side1 + +side2 + +side3)/2;
+	var area = Math.sqrt(s*(+s - +side1)*(+s - +side2)*(+s - +side3)).toFixed(2);
+		if(+area === 0)
+		{
+			alert("Not a valid triangle");
+		}
+		else
+		{
+			var divArea = document.getElementById('Area');
+			divArea.innerHTML = "";
+			divArea.innerHTML += "Area<br>" + area + " sq. units";
+		}
+	}
+}
+
+function trianglePerimeter() {
+	var side1 = document.getElementById('side1').value;
+	var side2 = document.getElementById('side2').value;
+	var side3 = document.getElementById('side3').value;
+	if(+side1 < 0 || +side2 < 0 || +side3 < 0)
+	{
+		alert("Can't input negative values");
+	}
+	else
+	{
+	var s = (+side1 + +side2 + +side3)/2;
+	var area = Math.sqrt(s*(+s - +side1)*(+s - +side2)*(+s - +side3)).toFixed(2);
+	if(+area === 0)
+		{
+			//Do nothing
+		}
+		else
+		{
+			var perimeter = (+side1 + +side2 + +side3);
+			var divPerimeter = document.getElementById('Perimeter');
+			divPerimeter.innerHTML = "";
+			divPerimeter.innerHTML += "Perimeter<br>" + perimeter + " units";
+		}
+	}
+}
+
+function squareArea() {
+	var side = document.getElementById('side').value;
+	if(+side < 0)
+	{
+		alert("Can't input negative values");
+	}
+	else
+	{
+	var area = side*side;
+	var divArea = document.getElementById('Area');
+	divArea.innerHTML = "";
+	divArea.innerHTML += "Area<br>" + area + " sq. units";
+	}
+}
+
+function squarePerimeter() {
+	var side = document.getElementById('side').value;
+	if(+side < 0)
+	{
+		alert("Can't input negative values");
+	}
+	else
+	{
+	var perimeter = 4*side;
+	var divPerimeter = document.getElementById('Perimeter');
+	divPerimeter.innerHTML = "";
+	divPerimeter.innerHTML += "Perimeter<br>" + perimeter + " units";
+	}
+}
+
+function rectangleArea() {
+	var length = document.getElementById('length').value;
+	var breadth = document.getElementById('breadth').value;
+	if(+length < 0 || +breadth < 0)
+	{
+		alert("Can't input negative values");
+	}
+	else
+	{
+	var area = (length*breadth);
+	var divArea = document.getElementById('Area');
+	divArea.innerHTML = "";
+	divArea.innerHTML += "Area<br>" + area + " sq. units";
+	}
+}
+
+function rectanglePerimeter() {
+	var length = document.getElementById('length').value;
+	var breadth = document.getElementById('breadth').value;
+	if(+length < 0 || +breadth < 0)
+	{
+		alert("Can't input negative values");
+	}
+	else
+	{
+	var perimeter = 2*(+length + +breadth);
+	var divPerimeter = document.getElementById('Perimeter');
+	divPerimeter.innerHTML = "";
+	divPerimeter.innerHTML += "Perimeter<br>" + perimeter + " units";
+	}
+}
+
+function hexagonArea() {
+	var side = document.getElementById('hexSide').value;
+	if(+side < 0)
+	{
+		alert("Can't input negative values");
+	}
+	else
+	{
+	var area = ((3*1.73*side*side)/2).toFixed(2);
+	var divArea = document.getElementById('Area');
+	divArea.innerHTML = "";
+	divArea.innerHTML += "Area<br>" + area + " sq. units";
+	}
+}
+
+function hexagonPerimeter() {
+	var side = document.getElementById('hexSide').value;
+	if(+side < 0)
+	{
+		alert("Can't input negative values");
+	}
+	else
+	{
+	var perimeter = 6*side;
+	var divPerimeter = document.getElementById('Perimeter');
+	divPerimeter.innerHTML = "";
+	divPerimeter.innerHTML += "Perimeter<br>" + perimeter + " units";
+	}
+}
+
+</script>
+
+
+</body>
+</html>
