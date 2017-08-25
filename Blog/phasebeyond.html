@@ -8,32 +8,37 @@ a:link {
     background-color: transparent; 
     text-decoration: none;
 }
-
 a:visited {
     color: #BB1611;
     background-color: transparent;
     text-decoration: none;
 }
-
 a:hover {
     color: #1C1C3B;
     background-color: transparent;
     text-decoration: none;
 }
-
 a:active {
     color: #1C1C3B;
     background-color: transparent;
     text-decoration: none;
 }
 
+A.class2 {color:white;}
+A.class2:link {text-decoration: none; color: white;}
+A.class2:visited {text-decoration: none; color: white;}
+A.class2:hover {background-color: #BB1611; text-decoration: none; color: white;}
+A.class2:active {text-decoration: none; color: white;}
+
 #top-bar {
+	position: fixed;
+	width: 100%;
 	background-color: #423938;
 	height: 80px;
 	padding-left: 150px;
 	padding-top:50px;
+	margin-bottom: 100px;
 }
-
 article{
 	float: left;
 	padding-left: 20px;
@@ -41,12 +46,14 @@ article{
 	padding-top:20px;
 	padding-bottom: 20px;
 	margin-left: 150px;
+	margin-top: 100px;
 	background-color: white;
 	width: 55%;
 	border-bottom-style: solid;
 	border-bottom-color: #1C1C3B;
 	border-bottom-width: 5px;
 	margin-bottom: 20px;
+	box-shadow: 2px 2px 10px #ccc;
 }
 
 aside {
@@ -57,20 +64,56 @@ aside {
 	padding-top:30px;
 	padding-bottom: 20px;
 	margin-left: 30px;
-	margin-top: 35px;
+	margin-top: 135px;
+	margin-right: 50px;
 	background-color: white;
 	width: 20%;
 	border-bottom-style: solid;
 	border-bottom-color: #FFC300;
 	border-bottom-width: 5px;
-	position: relative;
+	box-shadow: 2px 2px 10px #ccc;
 }
+
+body{
+	margin: 0px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #423938;
+}
+
+li{
+	float: left;
+	display: inline;
+	padding-right: 15px;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #BB1611;
+}
+
 </style>
 </Head>
 <Body bgcolor = "#F2F1F1">
 <!--Put headings inside the header tag so that the crawlers are able to read them when searching-->
 <Section id = "top-bar">
-	<Header><font size = "5" face = "verdana" color = "white">phasebeyond</font></Header>
+	<ul>
+	<li><font size = "5" face = "verdana" color = "white">phasebeyond&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</font>
+	<li><font size = "3" face = "verdana" color = "#F2F1F1"><a class = "class2" href = "phasebeyond_v3.html">Home</a></font>
+	<li><font size = "3" face = "verdana" color = "#F2F1F1"><a class = "class2" href = "about.html">About</a></font>
+	</ul>
 </Section>
 <br>
 <br>
@@ -79,7 +122,9 @@ aside {
 	<br>
 	<font face = "verdana" size = "3" ><a href="#article_1">The Craziest Stuff from CES 2017</a></font>
 	<br>
+	<br>
 	<font face = "verdana" size = "3" ><a href="#article_2">Samsung's 12 MP BRITCELL Camera Explained!</a></font>
+	<br>
 	<br>
 	<font face = "verdana" size = "3" ><a href="#article_3">Say Hello to the Moto Z</a></font>
 	<br>
