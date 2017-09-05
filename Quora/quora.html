@@ -40,33 +40,13 @@ nav{
 	color: white;
 }
 
-.dropdown {
-	position: relative;
-	display: inline-block;
-}
-
-.dropdown-content {
-	font: 100 16px/1.2 'Roboto Condensed', Verdana, sans-serif;
-	display: none;
-	position: absolute;
-	background-color: white;
-	min-width: 160 px;
-	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-	padding: 12px 16px;
-	z-index: 1;
-}
-
-dropdown: hover .dropdown-content {
-	display: block;
-}
-
 article{
-	float:left
+	float:left;
 	padding-left: 20px;
 	padding-right: 20px;
 	padding-top:20px;
 	padding-bottom: 20px;
-	margin-left: 360px;
+	margin-left: 370px;
 	margin-top: 30px;
 	background-color: white;
 	width: 45%;
@@ -80,68 +60,25 @@ article{
 font {
 	font: 100 20px/1.2 'Roboto Condensed', Helvetica, sans-serif;
     color: rgba(0,0,0,0.7);
-    text-shadow: 3px 3px 3px #fff;
 }
 
-</style>
-</head>
-<body>
-<nav>
-	<button class = "button" onclick = "changeShape(0)">Quora</button>
-	<button class = "button" onclick = "changeShape(1)">Read</button>
-	<button class = "button" onclick = "changeShape(2)">Answer</button>
-	<button class = "button" onclick = "changeShape(3)">Search</button>
-	<button class = "button" onclick = "changeShape(4)">Trending</button>	
-</nav>
-
-<Section>
-	<article>
-		
-	</article>
-</Section>
-<Section>
-	<article>
-		
-	</article>
-</Section>
-
-<div id="map" style="width:400px;height:400px;background:yellow"></div>
-
-<script>
-function myMap() {
-var mapOptions = {
-    center: new google.maps.LatLng(28.4595, 77.0266),
-    zoom: 10,
-    mapTypeId: google.maps.MapTypeId.ROADMAP
-}
-var map = new google.maps.Map(document.getElementById("map"), mapOptions);
-}
-</script>
-
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB5Bi3mFn_XfaUFvtE_x_r3M06qtlnukMw&callback=myMap" type = "text/javascript"></script>
-
-</body>
-</html><html>
-<head>
-<Title>Quora Redesign</Title>
-<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
-<style>
-body {
-	margin: 0px;
-	background-color: #F0F0F1;
+.font_user {
+	font: 100 16px/1.2 'Roboto Condensed', Helvetica, sans-serif;
+    color: rgba(0,0,0,0.7);
 }
 
-nav{
-	background-color: white;
-	height: 55px;
-	padding-left: 400px;
-	padding-top: 0px;
-	align: center;
-	box-shadow: 2px 2px 10px #ccc;
+p {
+	font: 100 18px/1.2 'Roboto', Helvetica, sans-serif;
+    color: rgba(0,0,0,0.7);
 }
 
-.button {
-	font: 100 15px/1.1 'Roboto Condensed', Verdana, sans-serif;
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+.dropdown .button {
+    font: 100 15px/1.1 'Roboto Condensed', Verdana, sans-serif;
     background-color: white;
     border: none;
     color: #900C3F;
@@ -154,81 +91,103 @@ nav{
     cursor: pointer;
 }
 
-.button:focus {
-	outline: none;
-}
-
-.button:hover {
-	background-color: #900C3F;
+.dropdown .button:hover {
+    background-color: #900C3F;
 	color: white;
 }
 
-.dropdown {
-	position: relative;
-	display: inline-block;
-}
-
 .dropdown-content {
-	font: 100 16px/1.2 'Roboto Condensed', Verdana, sans-serif;
-	display: none;
-	position: absolute;
-	background-color: white;
-	min-width: 160 px;
-	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-	padding: 12px 16px;
-	z-index: 1;
+	font: 100 15px/1.1 'Roboto Condensed', Verdana, sans-serif;
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
 }
 
-dropdown: hover .dropdown-content {
-	display: block;
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
 }
 
-article{
-	float:left
-	padding-left: 20px;
-	padding-right: 20px;
-	padding-top:20px;
-	padding-bottom: 20px;
-	margin-left: 360px;
-	margin-top: 30px;
-	background-color: white;
-	width: 45%;
-	border-bottom-style: solid;
-	border-bottom-color: maroon;
-	border-bottom-width: 5px;
-	margin-bottom: 20px;
-	box-shadow: 2px 2px 10px #ccc;
+.dropdown-content a:hover {
+    background-color: #ddd;
 }
 
-font {
-	font: 100 20px/1.2 'Roboto Condensed', Helvetica, sans-serif;
-    color: rgba(0,0,0,0.7);
-    text-shadow: 3px 3px 3px #fff;
+.show {
+    display: block;
 }
 
 </style>
 </head>
 <body>
 <nav>
-	<button class = "button" onclick = "changeShape(0)">Quora</button>
-	<button class = "button" onclick = "changeShape(1)">Read</button>
+	<button class = "button" onclick = "changeShape(0)">Trending</button>
+	<button class = "button" onclick = "changeShape(1)">Ask</button>
 	<button class = "button" onclick = "changeShape(2)">Answer</button>
 	<button class = "button" onclick = "changeShape(3)">Search</button>
-	<button class = "button" onclick = "changeShape(4)">Trending</button>	
+	<div class="dropdown">
+		<button class = "button" onclick = "myFunction()">Profile</button>	
+		<div class="dropdown-content" id="myDropdown">
+			<a href="#">My Account</a>
+			<a href="#">My Notifications</a>
+			<a href="#">Blogs</a>
+			<a href="#">Messages</a>
+			<a href="#">My Content</a>
+			<a href="#">Stats</a>
+			<a href="#">Settings</a>
+		</div>
+	</div>
 </nav>
 
 <Section>
 	<article>
-		
+		<Header><font>What is it like to earn 50 LPA?</font></Header>
+		<br>
+		<font class = "font_user">Sruthi T W, studied Human Resource Management</font>
+		<p>
+		Well all I can say is that when you earn more you become more responsible. Initially it was easier to get carried away by the materialistic possessions that was available around.
+		<br>
+		<br>
+		Bought a few watches starting from Guess, soon realized I should never go beyond that because my good old Timex, Fastrack and Guess show me the same time and no one really bothers what watch is there on my wrist. Then I have kept a Versace handbag carefully wrapped up in my closet to remind me that it is almost a crime to own such a piece for someone coming from a middle class background just because you earn pretty well now.
+		<br>
+		<br>
+		Now I only use money on essentials like a fairly good handbag, one or two pair of comfortable formal shoes and sneakers and good cosmetics brands for health reasons. I invest in real estate and some in equity funds. I have the smallest smartphone available among others in my office probably as it does all the work I want and I really don’t care what others think about seeing my phone. I do splurge a little on travelling, movies and books too.
+		<br>
+		<br>
+		From past few years I have started helping underprivileged children who are good students to complete their higher studies mainly from my native. Apart from that I regularly find good initiatives on Milaap and Ketto the crowd funding platforms in India where I can contribute smaller amounts to credible NGOs. As my earning or saving increased the number of causes I support also increased. It is funny, that whenever I post even a pic of potato on my social media handles like Facebook I get an average of 10 likes but when I put a pic of the donation from the crowd funding platforms for something as less as 1k also people tend to ignore it. Crowd funding platforms actually want people to share what they do on Facebook, but sadly I never got a good response.
+		<br>
+		<br>
+		I feel I was just fortunate enough to get educated as my parents had a stable pretty well paying job, they were educated and Kerala is blessed with good schools. So when I earn pretty well I think I learnt to be less selfish and do help more people. One less movie a month or a dinner date with my hubby would not hurt me much, but if I give it to someone needy probably their whole life can change. I love the saying, ‘Give a man a fish to feed him for a day… Teach a man to fish to feed him for a lifetime.’. My biggest wish in life is to help as many people get literate and educated in India. Hope one day I will leave my project management career and do this.
+		</p>
 	</article>
 </Section>
 <Section>
 	<article>
-		
+		<Header><font>What's the worst Linux distribution you have ever tried?</font></Header>
+		<br>
+		<font class = "font_user">Anshul Sharma, lives in Gurgaon, Haryana</font>
+		<p>
+		I loved Linux Mint. Smooth and nice Cinnamon GUI.
+		<br>
+		<br>
+		I am using Ubuntu now on my new laptop because I was not able to install Mint on it. Ubuntu installed fine (with nomodeset mode ) during installation. Ubuntu has great online support and you can tweak the GUI with Ubuntu Tweak, Unity Tweak tool and Classic Menu Indicator apps to make it feel more like Windows or Cinnamon if you prefer that look and feel.
+		<br>
+		<br>
+		Zorin is OK but I had trouble installing it a few times as a Windows dual-boot computer.
+		<br>
+		<br>
+		The absolute worst linux distribution was Endless OS for me. It looked ans felt like android and it came preinstalled in my new computer. It felt very limited almost like a half linux and you could not even play videos unless you paid for the codec or something ridiculous. I removed Endless OS immediately and installed Ubuntu 16.04.3 right away. I really disliked Endless OS. But Endless OS might be OK for kids or on less powerful laptops or for those who have no idea about computers and who just want to browse the web.
+		</p>
 	</article>
 </Section>
 
-<div id="map" style="width:400px;height:400px;background:yellow"></div>
+<div id="map" style="width:400px;height:400px;background:yellow; margin-left:480px; box-shadow: 2px 2px 10px #ccc; margin-bottom:30px;"></div>
 
 <script>
 function myMap() {
@@ -242,6 +201,23 @@ var map = new google.maps.Map(document.getElementById("map"), mapOptions);
 </script>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB5Bi3mFn_XfaUFvtE_x_r3M06qtlnukMw&callback=myMap" type = "text/javascript"></script>
+
+<script>
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+window.onclick = function(e) {
+  if (!e.target.matches('.button')) {
+    var myDropdown = document.getElementById("myDropdown");
+      if (myDropdown.classList.contains('show')) {
+        myDropdown.classList.remove('show');
+      }
+  }
+}
+</script>
+
+
 
 </body>
 </html>
