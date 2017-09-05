@@ -1,0 +1,247 @@
+<html>
+<head>
+<Title>Quora Redesign</Title>
+<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
+<style>
+body {
+	margin: 0px;
+	background-color: #F0F0F1;
+}
+
+nav{
+	background-color: white;
+	height: 55px;
+	padding-left: 400px;
+	padding-top: 0px;
+	align: center;
+	box-shadow: 2px 2px 10px #ccc;
+}
+
+.button {
+	font: 100 15px/1.1 'Roboto Condensed', Verdana, sans-serif;
+    background-color: white;
+    border: none;
+    color: #900C3F;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.button:focus {
+	outline: none;
+}
+
+.button:hover {
+	background-color: #900C3F;
+	color: white;
+}
+
+.dropdown {
+	position: relative;
+	display: inline-block;
+}
+
+.dropdown-content {
+	font: 100 16px/1.2 'Roboto Condensed', Verdana, sans-serif;
+	display: none;
+	position: absolute;
+	background-color: white;
+	min-width: 160 px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	padding: 12px 16px;
+	z-index: 1;
+}
+
+dropdown: hover .dropdown-content {
+	display: block;
+}
+
+article{
+	float:left
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top:20px;
+	padding-bottom: 20px;
+	margin-left: 360px;
+	margin-top: 30px;
+	background-color: white;
+	width: 45%;
+	border-bottom-style: solid;
+	border-bottom-color: maroon;
+	border-bottom-width: 5px;
+	margin-bottom: 20px;
+	box-shadow: 2px 2px 10px #ccc;
+}
+
+font {
+	font: 100 20px/1.2 'Roboto Condensed', Helvetica, sans-serif;
+    color: rgba(0,0,0,0.7);
+    text-shadow: 3px 3px 3px #fff;
+}
+
+</style>
+</head>
+<body>
+<nav>
+	<button class = "button" onclick = "changeShape(0)">Quora</button>
+	<button class = "button" onclick = "changeShape(1)">Read</button>
+	<button class = "button" onclick = "changeShape(2)">Answer</button>
+	<button class = "button" onclick = "changeShape(3)">Search</button>
+	<button class = "button" onclick = "changeShape(4)">Trending</button>	
+</nav>
+
+<Section>
+	<article>
+		
+	</article>
+</Section>
+<Section>
+	<article>
+		
+	</article>
+</Section>
+
+<div id="map" style="width:400px;height:400px;background:yellow"></div>
+
+<script>
+function myMap() {
+var mapOptions = {
+    center: new google.maps.LatLng(28.4595, 77.0266),
+    zoom: 10,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+}
+var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+}
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB5Bi3mFn_XfaUFvtE_x_r3M06qtlnukMw&callback=myMap" type = "text/javascript"></script>
+
+</body>
+</html><html>
+<head>
+<Title>Quora Redesign</Title>
+<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
+<style>
+body {
+	margin: 0px;
+	background-color: #F0F0F1;
+}
+
+nav{
+	background-color: white;
+	height: 55px;
+	padding-left: 400px;
+	padding-top: 0px;
+	align: center;
+	box-shadow: 2px 2px 10px #ccc;
+}
+
+.button {
+	font: 100 15px/1.1 'Roboto Condensed', Verdana, sans-serif;
+    background-color: white;
+    border: none;
+    color: #900C3F;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.button:focus {
+	outline: none;
+}
+
+.button:hover {
+	background-color: #900C3F;
+	color: white;
+}
+
+.dropdown {
+	position: relative;
+	display: inline-block;
+}
+
+.dropdown-content {
+	font: 100 16px/1.2 'Roboto Condensed', Verdana, sans-serif;
+	display: none;
+	position: absolute;
+	background-color: white;
+	min-width: 160 px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	padding: 12px 16px;
+	z-index: 1;
+}
+
+dropdown: hover .dropdown-content {
+	display: block;
+}
+
+article{
+	float:left
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top:20px;
+	padding-bottom: 20px;
+	margin-left: 360px;
+	margin-top: 30px;
+	background-color: white;
+	width: 45%;
+	border-bottom-style: solid;
+	border-bottom-color: maroon;
+	border-bottom-width: 5px;
+	margin-bottom: 20px;
+	box-shadow: 2px 2px 10px #ccc;
+}
+
+font {
+	font: 100 20px/1.2 'Roboto Condensed', Helvetica, sans-serif;
+    color: rgba(0,0,0,0.7);
+    text-shadow: 3px 3px 3px #fff;
+}
+
+</style>
+</head>
+<body>
+<nav>
+	<button class = "button" onclick = "changeShape(0)">Quora</button>
+	<button class = "button" onclick = "changeShape(1)">Read</button>
+	<button class = "button" onclick = "changeShape(2)">Answer</button>
+	<button class = "button" onclick = "changeShape(3)">Search</button>
+	<button class = "button" onclick = "changeShape(4)">Trending</button>	
+</nav>
+
+<Section>
+	<article>
+		
+	</article>
+</Section>
+<Section>
+	<article>
+		
+	</article>
+</Section>
+
+<div id="map" style="width:400px;height:400px;background:yellow"></div>
+
+<script>
+function myMap() {
+var mapOptions = {
+    center: new google.maps.LatLng(28.4595, 77.0266),
+    zoom: 10,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+}
+var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+}
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB5Bi3mFn_XfaUFvtE_x_r3M06qtlnukMw&callback=myMap" type = "text/javascript"></script>
+
+</body>
+</html>
