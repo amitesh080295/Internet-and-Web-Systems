@@ -1,0 +1,263 @@
+<html>
+<head>
+<Title>Quora Redesign</Title>
+<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+<style>
+body {
+	margin: 0px;
+	padding-bottom: 30px;
+	background-color: white;
+}
+
+nav{
+	background-color: white;
+	height: 55px;
+	padding-left: 380px;
+	padding-top: 0px;
+	align: center;
+	box-shadow: 2px 2px 10px #ccc;
+}
+
+.button {
+	font: 100 15px/1.1 'Roboto Condensed', Verdana, sans-serif;
+    background-color: white;
+    border: none;
+    color: #900C3F;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.button:focus {
+	outline: none;
+}
+
+.button:hover {
+	background-color: #900C3F;
+	color: white;
+}
+
+.upvote {
+	font: 100 13px/1.1 'Roboto Condensed', Verdana, sans-serif;
+    border: none;
+    background-color: #900C3F;
+	color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.upvote:focus {
+	outline-style: none;
+}
+
+.answers {
+	float:left;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top:20px;
+	padding-bottom: 20px;
+	margin-left: 360px;
+	margin-top: 30px;
+	margin-bottom: 20px;
+	background-color: white;
+	width: 45%;
+	border-bottom-style: solid;
+	border-bottom-color: maroon;
+	border-bottom-width: 5px;
+	box-shadow: 2px 2px 10px #ccc; 
+}
+
+font {
+	font: 100 28px/1.2 'Roboto Condensed', Helvetica, sans-serif;
+    color: #900C3F;
+}
+
+.font_user {
+	font: 100 18px/1.2 'Roboto Condensed', Helvetica, sans-serif;
+    color: rgba(0,0,0,0.7);
+}
+
+p {
+	font: 200 18px/1.2 'Roboto', Helvetica, sans-serif;
+    color: rgba(0,0,0,0.7);
+}
+
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+.dropdown .button {
+    font: 100 15px/1.1 'Roboto Condensed', Verdana, sans-serif;
+    background-color: white;
+    border: none;
+    color: #900C3F;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.dropdown .button:hover {
+    background-color: #900C3F;
+	color: white;
+}
+
+.dropdown-content {
+	font: 100 15px/1.1 'Roboto Condensed', Verdana, sans-serif;
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.show {
+    display: block;
+}
+
+input[type=text] {
+    width: 130px;
+	font: 100 16px/1.1 'Roboto Condensed', Verdana, sans-serif;
+	color: #900C3F;
+	margin-top: -50px;
+	margin-left: 450px;
+    box-sizing: border-box;
+    border: 2px solid #900C3F;
+    border-radius: 4px;
+    background-color: white;
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus {
+    width: 40%;
+	outline-style: none;
+}
+
+ul {
+	color: #0C5690;
+}
+
+li {
+	padding-bottom: 3px;
+}
+
+li:hover {
+	cursor: pointer;
+}
+
+A.class2 {color:rgba(0,0,0,0.7);}
+A.class2:link {text-decoration: none; color: rgba(0,0,0,0.7);}
+A.class2:visited {text-decoration: none; color: rgba(0,0,0,0.7);}
+A.class2:hover {text-decoration: none; color: #900C3F; cursor: pointer;}
+A.class2:active {text-decoration: none; color: rgba(0,0,0,0.7);}
+
+hr {
+	margin-top: 120px;
+	width: 70%;
+}
+
+</style>
+</head>
+<body>
+<nav>
+	<div class="dropdown">
+		<button class = "button" onclick = "myFunction()">Profile</button>	
+		<div class="dropdown-content" id="myDropdown">
+			<a href="profile.html">My Account</a>
+			<a href="#">My Notifications</a>
+			<a href="#">Blogs</a>
+			<a href="#">Messages</a>
+			<a href="#">My Content</a>
+			<a href="#">Stats</a>
+			<a href="#">Settings</a>
+		</div>
+	</div>
+	<div class="dropdown">
+		<button class = "button" onclick = "myTrends()">Trending</button>
+		<div class="dropdown-content" id="Trends">
+			<a href="topic.html">By Topic</a>
+			<a href="region.html">By Region</a>
+		</div>
+	</div>
+	<a href = "ask.html"><button class = "button" onclick = "changeShape(1)">Ask</button></a>
+	<a href = "answer.html"><button class = "button" onclick = "changeShape(2)">Answer</button></a>
+	<form><input type = "text" name = "search" placeholder = "Search"></form>
+	<a href = "quora.html"><img src = "logo.png" style = "height: 100px; width: 100px; margin-left: -350px; margin-top: -93px;"></a>
+</nav>
+
+<Section>
+	<span>
+		<img src = "profile.png" style = "height: 190px; width; 190px; margin-top:50px; margin-left: 180px;" >
+		<Header style = "margin-top: -190px; margin-left: 400px; padding-bottom: 7px;"><font><b>Barack Obama</b</font></Header>
+		<Header style = "margin-left: 400px; padding-bottom: 7px;"><font class = "font_user"><a class = "class2">Add a profile credential</a></font></Header>
+		<Header style = "margin-left: 400px;"><font class = "font_user"><a class = "class2">Write a description about yourself</a></font></Header>
+	</span>
+	<hr>
+</Section>
+
+
+
+<script>
+
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+window.onclick = function(e) {
+  if (!e.target.matches('.button')) {
+    var myDropdown = document.getElementById("myDropdown");
+      if (myDropdown.classList.contains('show')) {
+        myDropdown.classList.remove('show');
+      }
+  }
+}
+
+function myTrends() {
+    document.getElementById("Trends").classList.toggle("show");
+}
+
+window.onclick = function(e) {
+  if (!e.target.matches('.button')) {
+    var myDropdown = document.getElementById("Trends");
+      if (myDropdown.classList.contains('show')) {
+        myDropdown.classList.remove('show');
+      }
+  }
+}
+</script>
+
+
+</body>
+</html>

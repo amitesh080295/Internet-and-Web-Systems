@@ -1,0 +1,272 @@
+<html>
+<head>
+<Title>Quora Redesign</Title>
+<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+<style>
+body {
+	margin-top: 0px;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-bottom: 30px;
+	padding-bottom: 30px;
+	background-color: #F0F0F1;
+}
+
+nav{
+	background-color: white;
+	height: 55px;
+	padding-left: 380px;
+	padding-top: 0px;
+	align: center;
+	box-shadow: 2px 2px 10px #ccc;
+}
+
+.button {
+	font: 100 15px/1.1 'Roboto Condensed', Verdana, sans-serif;
+    background-color: white;
+    border: none;
+    color: #900C3F;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.button:focus {
+	outline: none;
+}
+
+.button:hover {
+	background-color: #900C3F;
+	color: white;
+}
+
+.upvote {
+	font: 100 16px/1.1 'Roboto Condensed', Verdana, sans-serif;
+	color: #900C3F;
+    box-sizing: border-box;
+    border: 2px solid #900C3F;
+    border-radius: 4px;
+    background-color: white;
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 12px 12px 12px;
+	margin-top: 7px;
+    cursor: pointer;
+}
+
+.upvote:focus {
+	outline-style: none;
+}
+
+.answers {
+	float:left;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top:20px;
+	padding-bottom: 20px;
+	margin-left: 360px;
+	margin-top: 30px;
+	background-color: white;
+	width: 45%;
+	border-bottom-style: solid;
+	border-bottom-color: maroon;
+	border-bottom-width: 5px;
+	box-shadow: 2px 2px 10px #ccc; 
+}
+
+font {
+	font: 100 20px/1.2 'Roboto Condensed', Helvetica, sans-serif;
+    color: rgba(0,0,0,0.7);
+}
+
+.font_user {
+	font: 100 16px/1.2 'Roboto Condensed', Helvetica, sans-serif;
+    color: #900C3F;
+}
+
+p {
+	font: 200 18px/1.2 'Roboto', Helvetica, sans-serif;
+    color: rgba(0,0,0,0.7);
+}
+
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+.dropdown .button {
+    font: 100 15px/1.1 'Roboto Condensed', Verdana, sans-serif;
+    background-color: white;
+    border: none;
+    color: #900C3F;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.dropdown .button:hover {
+    background-color: #900C3F;
+	color: white;
+}
+
+.dropdown-content {
+	font: 100 15px/1.1 'Roboto Condensed', Verdana, sans-serif;
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.show {
+    display: block;
+}
+
+input[type=text] {
+    width: 130px;
+	font: 100 16px/1.1 'Roboto Condensed', Verdana, sans-serif;
+	color: #900C3F;
+	margin-top: -50px;
+	margin-left: 450px;
+    box-sizing: border-box;
+    border: 2px solid #900C3F;
+    border-radius: 4px;
+    background-color: white;
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus {
+    width: 40%;
+	outline-style: none;
+}
+
+</style>
+</head>
+<body>
+<nav>
+	<div class="dropdown">
+		<button class = "button" onclick = "myFunction()">Profile</button>	
+		<div class="dropdown-content" id="myDropdown">
+			<a href="profile.html">My Account</a>
+			<a href="#">My Notifications</a>
+			<a href="#">Blogs</a>
+			<a href="#">Messages</a>
+			<a href="#">My Content</a>
+			<a href="#">Stats</a>
+			<a href="#">Settings</a>
+		</div>
+	</div>
+	<div class="dropdown">
+		<button class = "button" onclick = "myTrends()">Trending</button>
+		<div class="dropdown-content" id="Trends">
+			<a href="topic.html">By Topic</a>
+			<a href="region.html">By Region</a>
+		</div>
+	</div>
+	<a href = "ask.html"><button class = "button">Ask</button></a>
+	<button class = "button" onclick = "changeShape(2)">Answer</button>
+	<form><input type = "text" name = "search" placeholder = "Search"></form>
+	<a href = "quora.html"><img src = "logo.png" style = "height: 100px; width: 100px; margin-left: -350px; margin-top: -93px;"></a>
+</nav>
+
+<Section>
+	<article class = "answers">
+		<font class = "font_user">Category: Creative Writing</font>
+		<Header style = "margin-top: 7px; margin-bottom: 7px;"><font><b>What blogging platform is the best?</b</font></Header>
+		<font class = "font_user">Last asked 22m ago</font>
+		<br>
+		<button class = "upvote">Answer</button>
+	</article>
+</Section>
+<Section>
+	<article class = "answers">
+		<font class = "font_user">Category: Music, Software</font>
+		<Header style = "margin-top: 7px; margin-bottom: 7px;"><font><b>What is the best free DJ software with all options?</b></font></Header>
+		<font class = "font_user">Last asked 2 days ago</font>
+		<br>
+		<button class = "upvote">Answer</button>
+	</article>
+</Section>
+<Section>
+	<article class = "answers">
+		<font class = "font_user">Category: Recruitment, Job</font>
+		<Header style = "margin-top: 7px; margin-bottom: 7px;"><font><b>How do I get a job in Gulf countries?</b></font></Header>
+		<font class = "font_user">Last asked 3 weeks ago</font>
+		<br>
+		<button class = "upvote">Answer</button>
+	</article>
+</Section>
+
+<aside><div id = "map" style = "position: sticky; float: left; width:300px; height:300px; background:yellow; margin-top:-385px; margin-left:-975px; box-shadow: 2px 2px 10px #ccc; margin-bottom:30px;"></div></aside>
+
+
+
+<script>
+function myMap() {
+var mapOptions = {
+    center: new google.maps.LatLng(28.5258, 77.5745),
+    zoom: 10,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+	}
+	var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+}
+
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+window.onclick = function(e) {
+  if (!e.target.matches('.button')) {
+    var myDropdown = document.getElementById("myDropdown");
+      if (myDropdown.classList.contains('show')) {
+        myDropdown.classList.remove('show');
+      }
+  }
+}
+
+function myTrends() {
+    document.getElementById("Trends").classList.toggle("show");
+}
+
+window.onclick = function(e) {
+  if (!e.target.matches('.button')) {
+    var myDropdown = document.getElementById("Trends");
+      if (myDropdown.classList.contains('show')) {
+        myDropdown.classList.remove('show');
+      }
+  }
+}
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB5Bi3mFn_XfaUFvtE_x_r3M06qtlnukMw&callback=myMap" type = "text/javascript"></script>
+
+
+</body>
+</html>
